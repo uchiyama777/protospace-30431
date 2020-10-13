@@ -34,8 +34,11 @@ class PrototypesController < ApplicationController
   end
 
   def destroy
-  
-  end
+    prototype = Prototype.find(params[:id])
+    if prototype.destroy
+      render :index
+   end
+ end
 
   private
 
