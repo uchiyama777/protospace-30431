@@ -47,10 +47,11 @@
         <ul class="comments_lists">
           <%# 投稿に紐づくコメントを一覧する処理を記述する %>
             <li class="comments_list">
-              <%= " コメントのテキスト "%>
-              <%= link_to "（ ユーザー名 ）", root_path, class: :comment_user %>
+              <% @comments.each do |comment|%>
+              <%= link_to comment.user.name, root_path, class: :comment_user %>
             </li>
           <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
+          <% end %>
         </ul>
       </div>
     </div>
