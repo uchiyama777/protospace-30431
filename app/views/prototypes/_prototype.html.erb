@@ -8,6 +8,6 @@
     </li>
       <%= "プロトタイプのキャッチコピー" %>
     </p>
-    <%= link_to "by プロトタイプの投稿者名", "/users/#{current_user.id}", class: :card__user %>
+    <%= link_to "by プロトタイプの投稿者名", user_path(prototype.user), class: :card__user %>
   </div>
 </div>
