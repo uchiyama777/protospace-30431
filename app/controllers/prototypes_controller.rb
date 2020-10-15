@@ -1,6 +1,7 @@
 class PrototypesController < ApplicationController
   before_action :set_prototype, only: [:edit, :show]
   before_action :authenticate_user!, except: [:index, :edit, :show]
+  before_action :move_to_index, only: [:edit]
   #before_action :configure_permitted_parameters, if: :devise_controller?
 
   def index
@@ -61,7 +62,7 @@ class PrototypesController < ApplicationController
    # passwordとemailが許可されているので、他に必要の情報を追加する
   #end
 
-  def move_to_edit
+  def move_to_index
     unless user_signed_in?
       redirect_to action: :index
     end
