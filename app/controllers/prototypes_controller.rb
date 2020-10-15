@@ -1,7 +1,7 @@
 class PrototypesController < ApplicationController
   before_action :set_prototype, only: [:edit, :show]
   before_action :authenticate_user!, except: [:index, :edit, :show]
-  before_action :configure_permitted_parameters, if: :devise_controller?
+  #before_action :configure_permitted_parameters, if: :devise_controller?
 
   def index
      @prototypes = Prototype.all
@@ -55,6 +55,11 @@ class PrototypesController < ApplicationController
   def set_prototype
     @prototype = Prototype.find(params[:id])
   end
+
+  #def configure_permitted_parameters
+    #devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :profile, :occupation :position])
+   # passwordとemailが許可されているので、他に必要の情報を追加する
+  #end
 
   def move_to_edit
     unless user_signed_in?
