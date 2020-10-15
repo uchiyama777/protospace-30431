@@ -30,9 +30,9 @@
 | ------- | ---------- | ------------------------------ |
 | content | string     |                                |
 | user    | references | null: false, foreign_key: true |
-| room    | references | null: false, foreign_key: true |
+| prototype    | references | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :pictures
+- belongs_to :prototype
 - belongs_to :user
